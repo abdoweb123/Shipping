@@ -4,11 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Passport\HasApiTokens;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class DeliveryMan extends Authenticatable
+class DeliveryMan extends Authenticatable implements JWTSubject
 {
-    use HasFactory;
+    use HasApiTokens, HasFactory , SoftDeletes;
 
     protected $fillable = ['birthdate', 'toolBackLicenceImage', 'toolFrontLicenceImage',
                             'toolType_id', 'email', 'name', 'phone', 'password' , 'nationalityFrontIdImage',
@@ -22,6 +25,19 @@ class DeliveryMan extends Authenticatable
     public function toolType()
     {
         return $this->belongsTo(ToolType::class,'toolType_id');
+    }
+
+
+
+    /*** Related to JWT ***/
+    public function getJWTIdentifier() {
+        return $this->getKey();
+    }
+
+
+    /*** Related to JWT ***/
+    public function getJWTCustomClaims() {
+        return [];
     }
 
 

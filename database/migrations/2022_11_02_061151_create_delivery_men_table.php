@@ -33,6 +33,7 @@ class CreateDeliveryMenTable extends Migration
             $table->double('lat');
             $table->double('long');
             $table->double('wallet');
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('toolType_id')->references('id')->on('tool_types')

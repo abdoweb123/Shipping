@@ -16,6 +16,7 @@ class CreateToolTypesTable extends Migration
         Schema::create('tool_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

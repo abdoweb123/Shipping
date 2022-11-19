@@ -46,6 +46,34 @@ return [
             'driver' => 'session',
             'provider' => 'delivery_men',
         ],
+
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+
+        'api-user' => [
+            'driver' => 'jwt',
+            'provider' => 'users',
+            'hash' => false,
+        ],
+
+
+        'api-admin' => [
+            'driver' => 'jwt',
+            'provider' => 'admins',
+            'hash' => false,
+        ],
+
+        'api-deliveryMan' => [
+            'driver' => 'jwt',
+            'provider' => 'delivery_men',
+            'hash' => false,
+        ],
+
+
     ],
 
     /*
@@ -77,6 +105,11 @@ return [
             'model' => App\Models\DeliveryMan::class,
         ],
 
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',

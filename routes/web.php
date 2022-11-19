@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdController;
+use App\Http\Controllers\StateController;
+use App\Http\Controllers\ToolTypeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -32,19 +35,18 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
     // ======================  login page ======================
     Route::group(['namespace' => 'Auth'], function () {
         Route::post('/login/test', [LoginController::class , 'login'])->middleware('guest')->name('loginTest');
-        Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
+        Route::get('/logout', 'LoginController@logout')->name('logout');
     });
 
 
-    // dashboard of user
-    Route::get('/user/dashboard', function () { return view('user.dashboard'); })->name('user.dashboard')->middleware('auth:web');
-
-    // dashboard of deliveryMan
-    Route::get('/deliveryMan/dashboard', function () { return view('deliveryMan.dashboard'); })->name('deliveryMan.dashboard')->middleware('auth:deliveryMan');
+    // dashboard of admin
+    Route::get('/dashboard', function (){ return view('dashboard'); })->middleware('auth:admin');
 
 
 
-
+    Route::resource('ads','AdController')->except('create','edit','show');
+    Route::resource('states','StateController')->except('create','edit','show');
+    Route::resource('toolTypes','ToolTypeController')->except('create','edit','show');
 
     // ======================  Admin ======================
 //    Route::group(['prefix' => 'branches'], function ()

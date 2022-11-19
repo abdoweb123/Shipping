@@ -18,6 +18,7 @@ class CreateStatesTable extends Migration
             $table->string('name');
             $table->string('imageUrl');
             $table->integer('numberOfOrders');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

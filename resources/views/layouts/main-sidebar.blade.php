@@ -7,41 +7,41 @@
                     <!-- menu item Dashboard-->
                     <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">لوحة التحكم</li>
 
-{{--                    <li>--}}
-{{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#cities">--}}
-{{--                            <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">{{trans('main_trans.cities')}}</span>--}}
-{{--                            </div>--}}
-{{--                            <div class="pull-right"><i class="ti-plus"></i></div>--}}
-{{--                            <div class="clearfix"></div>--}}
-{{--                        </a>--}}
-{{--                        <ul id="cities" class="collapse" data-parent="#sidebarnav">--}}
-{{--                            <li> <a href="#">{{trans('main_trans.cities_list')}}</a> </li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#ads">
+                            <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">الإعلانات</span>
+                            </div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="ads" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('ads.index')}}">قائمة الإعلانات</a></li>
+                        </ul>
+                    </li>
 
-{{--                    <li>--}}
-{{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#stations">--}}
-{{--                            <div class="pull-left"><i class="ti-palette"></i><span class="right-nav-text">{{trans('main_trans.stations')}}</span>--}}
-{{--                            </div>--}}
-{{--                            <div class="pull-right"><i class="ti-plus"></i></div>--}}
-{{--                            <div class="clearfix"></div>--}}
-{{--                        </a>--}}
-{{--                        <ul id="stations" class="collapse" data-parent="#sidebarnav">--}}
-{{--                            <li> <a href="#">{{trans('main_trans.stations_list')}}</a> </li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#states">
+                            <div class="pull-left"><i class="ti-palette"></i><span class="right-nav-text">المحافظات</span>
+                            </div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="states" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('states.index')}}">قائمة المحافظات</a> </li>
+                        </ul>
+                    </li>
 
-{{--                    <li>--}}
-{{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#buses">--}}
-{{--                            <div class="pull-left"><i class="ti-calendar"></i><span class="right-nav-text">الحافلات</span>--}}
-{{--                            </div>--}}
-{{--                            <div class="pull-right"><i class="ti-plus"></i></div>--}}
-{{--                            <div class="clearfix"></div>--}}
-{{--                        </a>--}}
-{{--                        <ul id="buses" class="collapse" data-parent="#sidebarnav">--}}
-{{--                            <li> <a href="#">قائمة الحافلات</a></li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#toolTypes">
+                            <div class="pull-left"><i class="ti-calendar"></i><span class="right-nav-text">وسيلة النقل</span>
+                            </div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="toolTypes" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('toolTypes.index')}}">قائمة وسائل النقل</a></li>
+                        </ul>
+                    </li>
                     <!-- menu title -->
 
 
@@ -62,22 +62,22 @@
 {{--                    </li>--}}
 {{--                    <!-- menu item Charts-->--}}
 {{--                    <li>--}}
-{{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#seats">--}}
-{{--                            <div class="pull-left"><i class="ti-menu-alt"></i><span class="right-nav-text">المقاعد</span></div>--}}
+{{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#clients">--}}
+{{--                            <div class="pull-left"><i class="ti-menu-alt"></i><span class="right-nav-text">العملاء</span></div>--}}
 {{--                            <div class="pull-right"><i class="ti-plus"></i></div>--}}
 {{--                            <div class="clearfix"></div>--}}
 {{--                        </a>--}}
-{{--                        <ul id="seats" class="collapse" data-parent="#sidebarnav">--}}
-{{--                            <li> <a href="#">إضافة مقاعد</a></li>--}}
+{{--                        <ul id="clients" class="collapse" data-parent="#sidebarnav">--}}
+{{--                            <li> <a href="#">قائمة العملاء</a></li>--}}
 {{--                        </ul>--}}
 {{--                    </li>--}}
 
                     <!-- menu font icon-->
-                    <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#font-icon">
-                            <div class="pull-left"><i class="ti-user"></i><span class="right-nav-text">إضافة مدير فرع جديد</span></div>
-                        </a>
-                    </li>
+{{--                    <li>--}}
+{{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#font-icon">--}}
+{{--                            <div class="pull-left"><i class="ti-user"></i><span class="right-nav-text">إضافة مدير فرع جديد</span></div>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
 {{--                    <!-- menu title -->--}}
 {{--                    <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Widgets, Forms & Tables </li>--}}
 {{--                    <!-- menu item Widgets-->--}}

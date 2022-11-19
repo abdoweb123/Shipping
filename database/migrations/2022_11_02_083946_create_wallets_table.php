@@ -20,6 +20,7 @@ class CreateWalletsTable extends Migration
             $table->integer('type');
             $table->unsignedBigInteger('deliveryMan_id')->nullable();
             $table->unsignedBigInteger('user_id')->nullable();
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('deliveryMan_id')->references('id')->on('delivery_men')

@@ -125,8 +125,8 @@
                         <div class="dropdown-header">
                             <div class="media">
                                 <div class="media-body">
-                                    <h5 class="mt-0 mb-0"> @if(auth('deliveryMan')->check()) {{auth('deliveryMan')->user()->name}} @else {{auth('web')->user()->name}} @endif</h5>
-                                    <span>@if(auth('deliveryMan')->check()) {{auth('deliveryMan')->user()->email}}  @else {{auth('web')->user()->email}} @endif</span>
+                                    <h5 class="mt-0 mb-0"> {{auth('admin')->user()->name}}</h5>
+                                    <span>{{auth('admin')->user()->email}} </span>
                                 </div>
                             </div>
                         </div>
@@ -136,18 +136,10 @@
                                 class="badge badge-info">6</span> </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#"><i class="text-info ti-settings"></i>Settings</a>
-                        @if(auth('deliveryMan')->check())
-                            <form method="GET" action="{{ route('logout','deliveryMan') }}">
-{{--                        @elseif(auth('admin')->check())--}}
-{{--                            <form method="GET" action="{{ route('logout','admin') }}">--}}
-{{--                        @elseif(auth('employee')->check())--}}
-{{--                            <form method="GET" action="{{ route('logout','employee') }}">--}}
-                        @else
-                            <form method="GET" action="{{ route('logout','web') }}">
-                        @endif
-                        @csrf
-                        <a class="dropdown-item" href="#" onclick="event.preventDefault();this.closest('form').submit();"><i class="bx bx-log-out"></i>تسجيل الخروج</a>
-                            </form>
+                        <form method="GET" action="{{ route('logout') }}">
+                            @csrf
+                            <a class="dropdown-item" href="#" onclick="event.preventDefault();this.closest('form').submit();"><i class="bx bx-log-out"></i>تسجيل الخروج</a>
+                        </form>
                     </div>
                 </li>
             </ul>

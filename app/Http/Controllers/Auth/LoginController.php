@@ -26,7 +26,7 @@ class LoginController extends Controller
 
 //    use AuthenticatesUsers;
 
-    use AuthTrait;
+//    use AuthTrait;
 
     public function __construct()
     {
@@ -46,9 +46,9 @@ class LoginController extends Controller
     /*** login function ***/
     public function login(LoginRequest $request){
 
-        if (Auth::guard($this->chekGuard($request))->attempt(['email' => $request->email, 'password' => $request->password])) {
+        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
 
-            return $this->redirect($request);
+            return redirect()->intended('dashboard');
         }
         else{
             return redirect()->back()->withInput(['email','password'])->with('alert-danger', 'يوجد خطا في كلمة المرور او اسم المستخدم أو النوع');
@@ -59,9 +59,9 @@ class LoginController extends Controller
 
 
     /*** logout function ***/
-    public function logout(Request $request,$type)
+    public function logout(Request $request)
     {
-        Auth::guard($type)->logout();
+        Auth::guard('admin')->logout();
 
         $request->session()->invalidate();
 

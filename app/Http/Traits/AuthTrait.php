@@ -12,9 +12,9 @@ trait AuthTrait
         if($request->type == 'deliveryMan'){
             $guardName= 'deliveryMan';
         }
-//        elseif ($request->type == 'admin'){
-//            $guardName= 'admin';
-//        }
+        elseif ($request->type == 'admin'){
+            $guardName= 'admin';
+        }
 //        elseif ($request->type == 'employee'){
 //            $guardName= 'employee';
 //        }
@@ -31,9 +31,9 @@ trait AuthTrait
         if($request->type == 'deliveryMan'){
             return redirect()->intended(RouteServiceProvider::DELIVERYMAN);
         }
-//        elseif ($request->type == 'admin'){
-//            return redirect()->intended(RouteServiceProvider::ADMIN);
-//        }
+        elseif ($request->type == 'admin'){
+            return redirect()->intended(RouteServiceProvider::ADMIN);
+        }
 //        elseif ($request->type == 'employee'){
 //            return redirect()->intended(RouteServiceProvider::EMPLOYEE);
 //        }

@@ -89,7 +89,6 @@ login-->
                                 <input id="password" type="password"
                                        class="form-control @error('password') is-invalid @enderror" name="password"
                                        autocomplete="current-password">
-
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -97,35 +96,6 @@ login-->
                                 @enderror
                             </div>
 
-                            <div class="section-field mb-20">
-                                <label class="mb-10 d-block" for="type">اختر النوع * </label>
-
-                                <div class="mb-1">
-                                    <div class="d-inline-block" style="margin-left:24px">
-                                        <input type="radio" name="type" value="web" class="@error('type') is-invalid @enderror"
-                                               style="margin-left: 3px"><span>عميل</span>
-                                    </div>
-                                    <div class="d-inline-block" style="margin-left:20px">
-                                        <input type="radio" name="type" value="deliveryMan" class="@error('type') is-invalid @enderror"
-                                               style="margin-left: 3px"><span>سائق التوصيل</span>
-                                    </div>
-                                </div>
-{{--                                <div class="mb-1">--}}
-{{--                                    <div class="d-inline-block" style="margin-left:20px">--}}
-{{--                                        <input type="radio" name="type" value="employee" class="@error('type') is-invalid @enderror"--}}
-{{--                                               style="margin-left: 3px"><span>موظف البيانات</span>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="d-inline-block" style="margin-left:20px">--}}
-{{--                                        <input type="radio" name="type" value="web" class="@error('type') is-invalid @enderror"--}}
-{{--                                               style="margin-left: 3px"><span>عميل</span>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-                                @error('type')
-                                <span class="invalid-feedback d-inline-block" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
 
                             <div class="section-field">
                                 <div class="remember-checkbox mb-30">

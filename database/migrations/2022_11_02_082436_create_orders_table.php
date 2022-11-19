@@ -29,11 +29,15 @@ class CreateOrdersTable extends Migration
             $table->double('expectedPrice');
             $table->integer('type');
             $table->string('images');
+            $table->string('phone');
             $table->boolean('declined')->default(false);
             $table->boolean('accepted')->default(false);
             $table->boolean('picked')->default(false);
             $table->boolean('dropped')->default(false);
             $table->boolean('completed')->default(false);
+            $table->date('picDate');
+            $table->date('dropDate');
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('stateFrom_id')->references('id')->on('states')

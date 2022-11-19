@@ -16,10 +16,10 @@ class RedirectIfAuthenticated
             return redirect(RouteServiceProvider::HOME);
         }
 
-        if (auth('deliveryMan')->check()) {
-            return redirect(RouteServiceProvider::DELIVERYMAN);
+        if (auth('admin')->check()) {
+            return redirect(RouteServiceProvider::ADMIN);
         }
-
+//
 //        if (auth('admin')->check()) {
 //            return redirect(RouteServiceProvider::ADMIN);
 //        }

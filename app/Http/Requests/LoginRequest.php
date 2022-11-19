@@ -18,7 +18,6 @@ class LoginRequest extends FormRequest
         return [
             'email'=>'required',
             'password'=>'required',
-            'type'=>'required|in:deliveryMan,web',
         ];
     }
 
@@ -27,7 +26,6 @@ class LoginRequest extends FormRequest
         return [
           'email.required'=>' البريد الإلكتروني مطلوب',
           'password.required'=>'كلمة المرور مطلوبة',
-          'type.required'=>'نوع المستخدم مطلوب',
         ];
     }
 }

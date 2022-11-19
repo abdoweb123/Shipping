@@ -8,6 +8,7 @@
     <meta name="description" content="Webmin - Bootstrap 4 & Angular 5 Admin Dashboard Template" />
     <meta name="author" content="potenzaglobalsolutions.com" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>لوحة تحكم الأدمن</title>
     @include('layouts.head')
 </head>
 
@@ -36,7 +37,7 @@ preloader -->
         <div class="page-title">
             <div class="row">
                 <div class="col-sm-6">
-                    <h4 class="mb-0">{{trans('main_trans.dashboard')}}</h4>
+                    <h4 class="mb-0">لوحة تحكم الأدمن</h4>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">

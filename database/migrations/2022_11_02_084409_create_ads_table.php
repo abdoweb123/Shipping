@@ -18,6 +18,7 @@ class CreateAdsTable extends Migration
             $table->string('imageUrl');
             $table->string('url');
             $table->boolean('active');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

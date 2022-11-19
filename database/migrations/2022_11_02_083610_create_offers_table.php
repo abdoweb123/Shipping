@@ -20,6 +20,7 @@ class CreateOffersTable extends Migration
             $table->string('comment');
             $table->double('offeredPrice');
             $table->boolean('accepted');
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('order_id')->references('id')->on('orders')
