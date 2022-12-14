@@ -8,24 +8,32 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Offer extends Model
 {
-    use HasFactory , SoftDeletes;
+    use HasFactory ,SoftDeletes;
 
-    protected $fillable = ['order_id', 'deliveryMan_id', 'comment', 'offeredPrice', 'accepted'];
+    protected $fillable = ['job_id', 'user_id', 'message', 'active', 'accepted'];
 
 
 
-    // relation between Offers && order
-    public function order()
+
+    /*** start relations ***/
+
+    public function job()
     {
-        return $this->belongsTo(Order::class,'order_id');
+        return $this->belongsTo(Job::class,'job_id');
     }
 
 
-    // relation between Offer && deliveryMan
-    public function deliveryMan()
+    public function user()
     {
-        return $this->belongsTo(DeliveryMan::class,'deliveryMan_id');
+        return $this->belongsTo(User::class,'user_id');
     }
 
+
+    public function offeredTasks()
+    {
+        return $this->hasMany(OfferedTask::class,'offer_id');
+    }
+
+    /*** end relations ***/
 
 } //end of class

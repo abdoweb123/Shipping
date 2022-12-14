@@ -18,11 +18,8 @@ class OfferRequest extends FormRequest
     public function rules()
     {
         return [
-            'order_id'=>'required',
-            'deliveryMan_id'=>'required',
-            'comment'=>'required',
-            'offeredPrice'=>'required',
-            'accepted'=>'required',
+            'job_id'=>'required',
+            'user_id'=>'required',
         ];
     }
 
@@ -30,11 +27,8 @@ class OfferRequest extends FormRequest
     public function messages()
     {
         return [
-            'order_id.required'=>'اسم الطلب مطلوب',
-            'deliveryMan_id.required'=>'اسم السائق مطلوب',
-            'comment.required'=>'التعليق مطلوب',
-            'offeredPrice.required'=>'سعر العرض مطلوب',
-            'accepted.required'=>'الموافقة مطلوبة',
+            'job_id.required'=>'اسم االوظيفة مطلوب',
+            'user_id.required'=>'اسم الموظف مطلوب',
         ];
     }
 

@@ -8,43 +8,134 @@
                     <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">لوحة التحكم</li>
 
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#ads">
-                            <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">الإعلانات</span>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#countries">
+                            <div class="pull-left"><i class="ti-home"></i><span class="right-nav-text">الدول</span>
                             </div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="ads" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('ads.index')}}">قائمة الإعلانات</a></li>
+                        <ul id="countries" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('countries.index')}}">قائمة الدول</a></li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#states">
-                            <div class="pull-left"><i class="ti-palette"></i><span class="right-nav-text">المحافظات</span>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#nationalities">
+                            <div class="pull-left"><i class="ti-palette"></i><span class="right-nav-text">الجنسيات</span>
                             </div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="states" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('states.index')}}">قائمة المحافظات</a> </li>
+                        <ul id="nationalities" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('nationalities.index')}}">قائمة الجنسيات</a> </li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#toolTypes">
-                            <div class="pull-left"><i class="ti-calendar"></i><span class="right-nav-text">وسيلة النقل</span>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#cities">
+                            <div class="pull-left"><i class="ti-calendar"></i><span class="right-nav-text">المدن</span>
                             </div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
-                        <ul id="toolTypes" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('toolTypes.index')}}">قائمة وسائل النقل</a></li>
+                        <ul id="cities" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('cities.index')}}">قائمة المدن</a></li>
                         </ul>
                     </li>
-                    <!-- menu title -->
 
 
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#specialties">
+                            <div class="pull-left"><i class="ti-menu-alt"></i><span class="right-nav-text">التخصصات</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="specialties" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('specialties.index')}}">قائمة التخصصات</a> </li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#reachedUs">
+                            <div class="pull-left"><i class="ti-file"></i><span class="right-nav-text">وسائل التواصل</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="reachedUs" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('reachedUs.index')}}">قائمة وسائل التواصل</a> </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#users">
+                            <div class="pull-left"><i class="ti-user"></i><span class="right-nav-text">الموظفون</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="users" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('users.index')}}">قائمة الموظفين</a> </li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#companies">
+                            <div class="pull-left"><i class="ti-archive"></i><span class="right-nav-text">الشركات</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="companies" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('companies.index')}}">قائمة الشركات</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#jobs">
+                            <div class="pull-left"><i class="ti-joomla"></i><span class="right-nav-text">الوظائف</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="jobs" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('jobs.index')}}">قائمة الوظائف</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#offers">
+                            <div class="pull-left"><i class="ti-dropbox"></i><span class="right-nav-text">العروض</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="offers" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('offers.index')}}">قائمة العروض</a></li>
+                            <li> <a href="{{route('offeredTasks.index')}}">قائمة عروض المهمات</a></li>
+                        </ul>
+                    </li>
+
+
+{{--                    <li>--}}
+{{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#jobRequirements">--}}
+{{--                            <div class="pull-left"><i class="ti-hand-drag"></i><span class="right-nav-text">متطلبات الوظائف</span></div>--}}
+{{--                            <div class="pull-right"><i class="ti-plus"></i></div>--}}
+{{--                            <div class="clearfix"></div>--}}
+{{--                        </a>--}}
+{{--                        <ul id="jobRequirements" class="collapse" data-parent="#sidebarnav">--}}
+{{--                            <li> <a href="{{route('jobRequirements.index')}}">قائمة متطلبات الوظائف</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
+
+
+{{--                    <li>--}}
+{{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#jobTerms">--}}
+{{--                            <div class="pull-left"><i class="ti-hummer"></i><span class="right-nav-text">شروط الوظائف</span></div>--}}
+{{--                            <div class="pull-right"><i class="ti-plus"></i></div>--}}
+{{--                            <div class="clearfix"></div>--}}
+{{--                        </a>--}}
+{{--                        <ul id="jobTerms" class="collapse" data-parent="#sidebarnav">--}}
+{{--                            <li> <a href="{{route('jobTerms.index')}}">قائمة شروط الوظائف</a></li>--}}
+{{--                        </ul>--}}
+{{--                    </li>--}}
 
 {{--                    <li>--}}
 {{--                        <a href="todo-list.html"><i class="ti-menu-alt"></i><span class="right-nav-text">Todo--}}
@@ -61,16 +152,7 @@
 {{--                                box</span> <span class="badge badge-pill badge-warning float-right mt-1">HOT</span> </a>--}}
 {{--                    </li>--}}
 {{--                    <!-- menu item Charts-->--}}
-{{--                    <li>--}}
-{{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#clients">--}}
-{{--                            <div class="pull-left"><i class="ti-menu-alt"></i><span class="right-nav-text">العملاء</span></div>--}}
-{{--                            <div class="pull-right"><i class="ti-plus"></i></div>--}}
-{{--                            <div class="clearfix"></div>--}}
-{{--                        </a>--}}
-{{--                        <ul id="clients" class="collapse" data-parent="#sidebarnav">--}}
-{{--                            <li> <a href="#">قائمة العملاء</a></li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
+
 
                     <!-- menu font icon-->
 {{--                    <li>--}}
@@ -86,61 +168,12 @@
 {{--                            <span class="badge badge-pill badge-danger float-right mt-1">59</span> </a>--}}
 {{--                    </li>--}}
 {{--                    <!-- menu item Form-->--}}
-{{--                    <li>--}}
-{{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Form">--}}
-{{--                            <div class="pull-left"><i class="ti-files"></i><span class="right-nav-text">Form &--}}
-{{--                                    Editor</span></div>--}}
-{{--                            <div class="pull-right"><i class="ti-plus"></i></div>--}}
-{{--                            <div class="clearfix"></div>--}}
-{{--                        </a>--}}
-{{--                        <ul id="Form" class="collapse" data-parent="#sidebarnav">--}}
-{{--                            <li> <a href="editor.html">Editor</a> </li>--}}
-{{--                            <li> <a href="editor-markdown.html">Editor Markdown</a> </li>--}}
-{{--                            <li> <a href="form-input.html">Form input</a> </li>--}}
-{{--                            <li> <a href="form-validation-jquery.html">form validation jquery</a> </li>--}}
-{{--                            <li> <a href="form-wizard.html">form wizard</a> </li>--}}
-{{--                            <li> <a href="form-repeater.html">form repeater</a> </li>--}}
-{{--                            <li> <a href="input-group.html">input group</a> </li>--}}
-{{--                            <li> <a href="toastr.html">toastr</a> </li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
+
 {{--                    <!-- menu item table -->--}}
-{{--                    <li>--}}
-{{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#table">--}}
-{{--                            <div class="pull-left"><i class="ti-layout-tab-window"></i><span class="right-nav-text">data--}}
-{{--                                    table</span></div>--}}
-{{--                            <div class="pull-right"><i class="ti-plus"></i></div>--}}
-{{--                            <div class="clearfix"></div>--}}
-{{--                        </a>--}}
-{{--                        <ul id="table" class="collapse" data-parent="#sidebarnav">--}}
-{{--                            <li> <a href="data-html-table.html">Data html table</a> </li>--}}
-{{--                            <li> <a href="data-local.html">Data local</a> </li>--}}
-{{--                            <li> <a href="data-table.html">Data table</a> </li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
+
 {{--                    <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">More Pages</li>--}}
 {{--                    <!-- menu item Custom pages-->--}}
-{{--                    <li>--}}
-{{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#custom-page">--}}
-{{--                            <div class="pull-left"><i class="ti-file"></i><span class="right-nav-text">Custom--}}
-{{--                                    pages</span></div>--}}
-{{--                            <div class="pull-right"><i class="ti-plus"></i></div>--}}
-{{--                            <div class="clearfix"></div>--}}
-{{--                        </a>--}}
-{{--                        <ul id="custom-page" class="collapse" data-parent="#sidebarnav">--}}
-{{--                            <li> <a href="projects.html">projects</a> </li>--}}
-{{--                            <li> <a href="project-summary.html">Projects summary</a> </li>--}}
-{{--                            <li> <a href="profile.html">profile</a> </li>--}}
-{{--                            <li> <a href="app-contacts.html">App contacts</a> </li>--}}
-{{--                            <li> <a href="contacts.html">Contacts</a> </li>--}}
-{{--                            <li> <a href="file-manager.html">file manager</a> </li>--}}
-{{--                            <li> <a href="invoice.html">Invoice</a> </li>--}}
-{{--                            <li> <a href="blank.html">Blank page</a> </li>--}}
-{{--                            <li> <a href="layout-container.html">layout container</a> </li>--}}
-{{--                            <li> <a href="error.html">Error</a> </li>--}}
-{{--                            <li> <a href="faqs.html">faqs</a> </li>--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
+
 {{--                    <!-- menu item Authentication-->--}}
 {{--                    <li>--}}
 {{--                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#authentication">--}}

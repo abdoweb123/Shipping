@@ -1,13 +1,22 @@
 <?php
 
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdController;
-use App\Http\Controllers\StateController;
-use App\Http\Controllers\ToolTypeController;
+
+use App\Http\Controllers\OfferController;
+use App\Http\Controllers\OfferedTaskController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\NationalityController;
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\ReachedUsController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\SpecialtyController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\JobTaskController;
+use App\Http\Controllers\JobRequirementController;
+use App\Http\Controllers\JobTermsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,37 +35,41 @@ Auth::routes();
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function(){
 
-    Route::group(['middleware'=>['guest']], function ()
-    {
-        Route::get('/', function () { return view('auth.login'); });
-    });
+
+    Route::get('', function (){ return view('dashboard'); });
 
 
-    // ======================  login page ======================
-    Route::group(['namespace' => 'Auth'], function () {
-        Route::post('/login/test', [LoginController::class , 'login'])->middleware('guest')->name('loginTest');
-        Route::get('/logout', 'LoginController@logout')->name('logout');
-    });
+    Route::resource('countries','CountryController')->except('show','edit','create');
+    Route::resource('nationalities','NationalityController')->except('show','edit','create');
+    Route::resource('cities','CityController')->except('show','edit','create');
+    Route::resource('reachedUs','ReachedUsController')->except('show','edit','create');
+    Route::resource('specialties','SpecialtyController')->except('show','edit','create');
+    Route::resource('users','UserController');
+    Route::resource('companies','CompanyController')->except('show');
+
+    Route::resource('jobs','JobController')->except('show');
+    Route::get('all/jobs/{job_id}',[JobController::class,'returnJob'])->name('returnJob');
+
+    Route::resource('jobTasks','JobTaskController')->except('show','index');
+    Route::get('jobTasks/create/{job_id}/{company_id}',[JobTaskController::class,'create'])->name('jobTasks.create');
+    Route::get('all/jobTasks/{job_id}/{company_id}',[JobTaskController::class,'index'])->name('jobTasks.index');
 
 
-    // dashboard of admin
-    Route::get('/dashboard', function (){ return view('dashboard'); })->middleware('auth:admin');
+    Route::resource('jobRequirements','JobRequirementController')->except('show','edit','create','index');
+    Route::get('jobRequirements/create/{job_id}/{company_id}}',[JobRequirementController::class,'create'])->name('jobRequirements.create');
+    Route::get('all/jobRequirements/{job_id}/{company_id}',[JobRequirementController::class,'index'])->name('jobRequirements.index');
+
+    Route::resource('jobTerms','JobTermsController')->except('show','edit','create','index');
+    Route::get('jobTerms/create/{job_id}/{company_id}}',[JobTermsController::class,'create'])->name('jobTerms.create');
+    Route::get('all/jobTerms/{job_id}/{company_id}',[JobTermsController::class,'index'])->name('jobTerms.index');
 
 
+    Route::get('all/offers',[OfferController::class,'index'])->name('offers.index');
+    Route::put('update/offers/{id}',[OfferController::class,'update'])->name('offer.update');
+    Route::delete('delete/offers/{id}',[OfferController::class,'destroy'])->name('offer.destroy');
 
-    Route::resource('ads','AdController')->except('create','edit','show');
-    Route::resource('states','StateController')->except('create','edit','show');
-    Route::resource('toolTypes','ToolTypeController')->except('create','edit','show');
-
-    // ======================  Admin ======================
-//    Route::group(['prefix' => 'branches'], function ()
-//    {
-//        Route::get('register/admin/view', [AdminController::class, 'registerView'])->name('registerView')->middleware('auth:admin');
-//        Route::post('register/test', [AdminController::class, 'registerTest'])->name('registerTest');
-//        Route::get('/admin/dashboard', function (){ return view('admin.dashboard'); });
-//    });
-
-
-
+    Route::get('all/offeredTasks',[OfferedTaskController::class,'index'])->name('offeredTasks.index');
+    Route::put('update/offeredTask/{id}',[OfferedTaskController::class,'update'])->name('offeredTask.update');
+    Route::delete('delete/offeredTasks/{id}',[OfferedTaskController::class,'destroy'])->name('offeredTask.destroy');
 }); //end of routes
 

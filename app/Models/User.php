@@ -2,73 +2,85 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-//use Laravel\Sanctum\HasApiTokens;
-use Laravel\Passport\HasApiTokens;
-use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable implements JWTSubject
+class User extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable , SoftDeletes;
+    use HasFactory , SoftDeletes;
+
+    protected $fillable = ['country_id', 'phone', 'profile_image', 'full_name', 'nationality_id',
+                            'gender', 'birthDate', 'email', 'id_number', 'identity_image',
+                            'relative_phone', 'city_id', 'area', 'workingArea_id', 'health_insurance',
+                            'antecedents', 'reachedUs_id', 'arabic_video_url', 'english_video_url',
+                            'active', 'specialty_id'
+                          ];
 
 
-    protected $fillable = ['name', 'email', 'phone', 'state_id', 'wallet', 'image', 'password'];
+    /*** start relations ***/
 
-    protected $hidden = ['password', 'remember_token',];
-
-    protected $casts = ['email_verified_at' => 'datetime',];
-
-
-
-    public function getImageAttribute($image)
+    public function country()
     {
-        return json_decode($image,true);
+        return $this->belongsTo(Country::class,'country_id');
     }
 
 
-
-    // relation between User && state
-    public function state()
+    public function nationality()
     {
-        return $this->belongsTo(State::class,'state_id');
+        return $this->belongsTo(Nationality::class,'nationality_id');
     }
 
 
-    // relation between User && wallets
-    public function wallets()
+    public function city()
     {
-        return $this->hasMany(Wallet::class,'user_id');
+        return $this->belongsTo(City::class,'city_id');
     }
 
 
-    // relation between User and Addresses
-    public function Addresses()
+    public function workingArea()
     {
-        return $this->hasMany(Address::class,'user_id');
+        return $this->belongsTo(City::class,'workingArea_id');
     }
 
 
-    // relation User && reviews
-    public function reviews()
+    public function reachedUs()
     {
-        return $this->hasMany(Review::class,'user_id');
+        return $this->belongsTo(ReachedUs::class,'reachedUs_id');
     }
 
 
-
-    /*** Related to JWT ***/
-    public function getJWTIdentifier() {
-        return $this->getKey();
+    public function specilaty()
+    {
+        return $this->belongsTo(Specialty::class,'specialty_id');
     }
 
 
-    /*** Related to JWT ***/
-    public function getJWTCustomClaims() {
-        return [];
+    public function job()
+    {
+        return $this->hasMany(Job::class,'user_id');
     }
+
+
+    public function jobTasks()
+    {
+        return $this->hasMany(JobTask::class,'user_id');
+    }
+
+
+    public function offers()
+    {
+        return $this->hasMany(Offer::class,'user_id');
+    }
+
+
+    public function offeredTasks()
+    {
+        return $this->hasMany(OfferedTask::class,'user_id');
+    }
+
+    /*** end relations ***/
+
+
 
 } //end of class

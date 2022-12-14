@@ -34,7 +34,19 @@
    .modal-body .row{margin-top:13px;}
 
 
-    body,h1,h2,h3,h4,h5,h6{font-family: Cairo,'tahoma','sans-serif' !important;}
+   body,h1,h2,h3,h4,h5,h6{font-family: Cairo,'tahoma','sans-serif' !important;}
+   input::-webkit-outer-spin-button,
+   input::-webkit-inner-spin-button{
+       -webkit-appearance: none;
+       margin: 0;
+   }
+
+   input[type=number]{
+       -moz-appearance: textfield;
+   }
+
+
+   body,h1,h2,h3,h4,h5,h6{font-family: Cairo,'tahoma','sans-serif' !important;}
 
 
 

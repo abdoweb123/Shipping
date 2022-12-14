@@ -53,8 +53,8 @@
     <!--=================================
  footer -->
 
-    @include('layouts.footer-scripts')
 
+    @include('layouts.footer-scripts')
 </body>
 
 </html>
